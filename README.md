@@ -10,11 +10,8 @@ IDM is a training-time regularization method for multimodal remote sensing class
 
 - Python >= 3.8
 - PyTorch >= 1.12
-- NumPy, scikit-learn, matplotlib, seaborn
+- NumPy, scikit-learn
 
-```bash
-pip install -r requirements.txt
-```
 
 ## Datasets
 
@@ -87,10 +84,10 @@ python eval_noise.py --dataset Houston --model resnet \
 │   ├── mvit.py
 │   ├── dsymfuser.py
 │   └── mamba.py
+│   └── dahgmn.py
 ├── hs_dsm_dataset.py       # Dataset loading utilities
 ├── idm.py                  # IDM regularization module
 ├── data/                   # Dataset directory
-└── requirements.txt
 ```
 
 
