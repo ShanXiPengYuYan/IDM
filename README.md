@@ -23,14 +23,7 @@ We evaluate on the following benchmarks:
 | Berlin | HS + SAR | 8 | [EnMAP Contest](https://www.enmap.org/) |
 | Augsburg | HS + SAR / HS + DSM | 7 | [TU Munich](https://mediatum.ub.tum.de/1474000) |
 
-Place the downloaded data under `./data/` with the following structure:
-
-```
-data/
-├── Houston/
-├── Berlin/
-└── Augsburg/
-```
+Important: After downloading, open hs_dsm_dataset.py and modify the data root path to your local dataset directory.
 
 ## Usage
 
