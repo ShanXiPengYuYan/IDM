@@ -34,7 +34,7 @@ Important: After downloading, open hs_dsm_dataset.py and modify the data root pa
 python train.py --dataset Houston --model resnet --seed 5
 
 # ResNet18 + IDM
-python train.py --dataset Houston --model resnet --seed 5 --lam 0.005 --sigma_scale 0.5
+python train.py --dataset Houston --model resnet --seed 5 --lam 0.005 --sigma_scale 0.5 --warmup_epoch 10
 ```
 
 ### Key Arguments
@@ -43,10 +43,9 @@ python train.py --dataset Houston --model resnet --seed 5 --lam 0.005 --sigma_sc
 |----------|------------|---------|
 | `--dataset` | Dataset name: Houston, Berlin, Augsburg | Houston |
 | `--model` | Backbone: resnet, cocnn, mft, exvit, dsymfuser, s2mamba, dahgm | resnet |
-| `--use_idm` | Enable IDM regularization | False |
-| `--lambda_reg` | Regularization weight $\lambda$ | 0.5 |
-| `--scale_factor` | Global scaling factor $c$ | 1.0 |
-| `--warmup_epochs` | Warmup epochs before enabling IDM | 10 |
+| `--lamg` | Regularization weight $\lambda$ | 0.5 |
+| `--sigma_scale` | Global scaling factor $c$ | 1.0 |
+| `--warmup_epoch` | Warmup epochs before enabling IDM | 10 |
 | `--seed` | Random seed | 5 |
 
 ### Supported Architectures
@@ -65,23 +64,22 @@ python eval_noise.py --dataset Houston --model resnet \
 ```
 
 ## Project Structure
-
-├── train.py                 # Main training script
-├── hs_dsm_dataset.py        # Dataset loading (modify data path here)
-├── utils.py                 # Utility functions
-├── test_noise.py            # Noise Performance Testing
-├── losses/                  # Loss functions including IDM regularization
-├── models/                  # Network architectures
-│   ├── backbone.py
-│   ├── resnet18.py
-│   ├── resnet18_adr.py
-│   ├── co_cnn.py
-│   ├── mft.py
-│   ├── mvit.py
-│   ├── dsymfuser.py
-│   ├── mamba.py
-│   ├── dahgmn.py
-│   └── SaCaCrossMamba.py
-└── requirements.txt
+    ├── train.py                 # Main training script
+    ├── hs_dsm_dataset.py        # Dataset loading (modify data path here)
+    ├── utils.py                 # Utility functions
+    ├── test_noise.py            # Noise performance testing
+    ├── losses/                  # Loss functions including IDM regularization
+    ├── models/                  # Network architectures
+    │   ├── backbone.py
+    │   ├── resnet18.py
+    │   ├── resnet18_adr.py
+    │   ├── co_cnn.py
+    │   ├── mft.py
+    │   ├── mvit.py
+    │   ├── dsymfuser.py
+    │   ├── mamba.py
+    │   ├── dahgmn.py
+    │   └── SaCaCrossMamba.py
+    └── requirements.txt
 
 
