@@ -41,7 +41,7 @@ data/
 python train.py --dataset Houston --model resnet --seed 5
 
 # ResNet18 + IDM
-python train.py --dataset Houston --model resnet --seed 5 --lambda_reg 0.005 --scale_factor 0.5 --warmup_epochs 10
+python train.py --dataset Houston --model resnet --seed 5 --lam 0.005 --sigma_scale 0.5
 ```
 
 ### Key Arguments
@@ -73,21 +73,22 @@ python eval_noise.py --dataset Houston --model resnet \
 
 ## Project Structure
 
-```
-├── train.py                # Main training script
-├── eval_noise.py           # Noise robustness evaluation
-├── plot_tsne.py            # t-SNE visualization
-├── models/                 # Network architectures
+├── train.py                 # Main training script
+├── hs_dsm_dataset.py        # Dataset loading (modify data path here)
+├── utils.py                 # Utility functions
+├── test_noise.py            # Noise Performance Testing
+├── losses/                  # Loss functions including IDM regularization
+├── models/                  # Network architectures
+│   ├── backbone.py
+│   ├── resnet18.py
 │   ├── resnet18_adr.py
 │   ├── co_cnn.py
 │   ├── mft.py
 │   ├── mvit.py
 │   ├── dsymfuser.py
-│   └── mamba.py
-│   └── dahgmn.py
-├── hs_dsm_dataset.py       # Dataset loading utilities
-├── idm.py                  # IDM regularization module
-├── data/                   # Dataset directory
-```
+│   ├── mamba.py
+│   ├── dahgmn.py
+│   └── SaCaCrossMamba.py
+└── requirements.txt
 
 
