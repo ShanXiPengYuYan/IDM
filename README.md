@@ -1,4 +1,4 @@
-# IDM: Intra-modal Discriminability Modulation
+# [ACM MM 2026] IDM: Intra-modal Discriminability Modulation
 
 Official implementation of *"Boosting Multimodal Remote Sensing Classification via Intra-modal Discriminability Modulation"*, Accepted at ACM MM 2026.
 
